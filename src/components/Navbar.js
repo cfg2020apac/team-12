@@ -10,7 +10,9 @@ const Navbar = () => {
         class="flex items-center flex-shrink-0 mr-6"
         style={{ color: "#A4A6B3" }}
       >
-        <span class="font-semibold text-xl tracking-tight">Team Muffin</span>
+        <span class="font-semibold text-xl tracking-tight">
+          New Hope Community Services
+        </span>
       </div>
       <div class="block lg:hidden">
         <button class="flex items-center px-3 py-2 border rounded text-teal-200 border-teal-400 hover:text-white hover:border-white">
@@ -37,12 +39,6 @@ const Navbar = () => {
             class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-6"
           >
             Beneficiaries
-          </a>
-          <a
-            href="#responsive-header"
-            class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-6"
-          >
-            Service Providers
           </a>
           <a
             href="#responsive-header"

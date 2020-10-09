@@ -1,24 +1,33 @@
 import React from "react"
 import ProfilePic from "../../../static/person-placeholder.png"
+import { Link } from "gatsby"
 
 const HomePage = () => {
   return (
     <div class="border rounded-lg m-4">
       <div class="px-8 pt-4 max-w flex flex-row">
         <div class="flex font-bold text-xl flex-grow">All beneficiaries</div>
-        <div class="flex float-right pr-4">Sort</div>
-        <div class="flex float-right">Filter</div>
+        <div class="flex float-right pr-4">
+          <button class="button rounded-full bg-gray-300 hover:bg-gray-200 py-2 px-4">
+            Sort
+          </button>
+        </div>
+        <div class="flex float-right">
+          <button class="button rounded-full bg-gray-300 hover:bg-gray-200 py-2 px-4">
+            Filter
+          </button>
+        </div>
       </div>
       <div class="px-8 p-8 flex flex-col">
         {/* card start */}
 
-        <div class="flex w-full mx-20 mb-2 text-gray-800">
+        <div class="flex w-full px-20 mb-2 text-gray-800">
           <div class="w-1/3">Beneficiary name</div>
           <div class="w-1/3 text-center">Services Pending</div>
           <div class="w-1/3 text-center pl-20">HDB Progress</div>
         </div>
-        <a href="#">
-          <div class="flex w-full border rounded-lg p-4 mb-4">
+        <Link to="first_user">
+          <div class="flex w-full border rounded-lg p-4 mb-4 bg-gray-200">
             {/* Profile */}
             <div class="flex w-1/3">
               <div>
@@ -38,6 +47,16 @@ const HomePage = () => {
             <div class="w-1/3 text-center">
               <img
                 src="https://pickaface.net/gallery/avatar/unr_random_180410_1905_z1exb.png"
+                class="inline object-cover w-12 h-12 mr-4 rounded-full grayscaleit"
+                alt="profile picture"
+              />
+              <img
+                src="https://pickaface.net/gallery/avatar/unr_random_180410_1905_z1exb.png"
+                class="inline object-cover w-12 h-12 mr-4 rounded-full"
+                alt="profile picture"
+              />
+              <img
+                src="https://pickaface.net/gallery/avatar/unr_random_180410_1905_z1exb.png"
                 class="inline object-cover w-12 h-12 mr-4 rounded-full"
                 alt="profile picture"
               />
@@ -50,11 +69,12 @@ const HomePage = () => {
               </button>
             </div>
           </div>
-        </a>
+        </Link>
         {/* card end */}
 
-        <a href="#">
-          <div class="flex max-w border rounded-lg p-4 mb-4">
+        {/* card start */}
+        <a href="/second_user">
+          <div class="flex max-w border rounded-lg p-4 mb-4 bg-gray-200">
             <div>
               <img
                 src={ProfilePic}
@@ -67,6 +87,7 @@ const HomePage = () => {
             </div>
           </div>
         </a>
+        {/* card end */}
       </div>
     </div>
   )
