@@ -68,7 +68,7 @@ const BeneficiaryCard = ({ header, items }) => {
   return (
     <div style={Container}>
       <div style={Header}>
-        <div style={{ verticalAlign: "middle", display: "table-cell", marignLeft:'10px'}}>
+        <div style={{verticalAlign:'middle', display:'table-cell', marginLeft:'10px'}}> 
           {header}
         </div>
 
