@@ -1,61 +1,58 @@
-import React, {useEffect, useState} from "react"
+import React, { useState, useEffect } from "react"
 import Layout from "../components/Layout"
 import Profile from "../components/Profile"
 import BeneficiaryCard from "../components/BeneficiaryCard"
-import HDBCard from '../components/HDBCard'
+import HDBCard from "../components/HDBCard"
 import { Helmet } from "react-helmet"
-import MatchingCard from "../components/MatchingCard"
+import firebase from "firebase"
+import "firebase/firestore"
 
-export default function BeneficiaryPage(){
-  const d = [
-    { name: "", area: "", morning_night: "", noise_level: "", age: "" },
-    { name: "", area: "", morning_night: "", noise_level: "", age: "" },
-    { name: "", area: "", morning_night: "", noise_level: "", age: "" },
-    { name: "", area: "", morning_night: "", noise_level: "", age: "" },
-  ]
-
-  const [matches, setMatches] = useState(JSON.stringify(d))
-
+const BeneficiaryPage = ({ beneficiaryData, name }) => {
+  const [cr, setCr] = useState()
   useEffect(() => {
-    // POST request using fetch inside useEffect React hook
-    // setMatches(JSON.stringify(d))
-    const requestOptions = {
-      method: "POST", // *GET, POST, PUT, DELETE, etc.
-      mode: "cors", // no-cors, *cors, same-origin
-      cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
-      credentials: "same-origin", // include, *same-origin, omit
-
-      headers: {
-        "Content-Type": "application/json",
-        "Access-Control-Allow-Origin": "*",
-        "Access-Control-Allow-Headers": "*",
-        // 'Content-Type': 'application/x-www-form-urlencoded',
-      },
-      redirect: "follow", // manual, *follow, error
-      referrerPolicy: "no-referrer",
-      body: JSON.stringify({ name: "yee han" }),
+    if (beneficiaryData !== undefined && name !== undefined) {
+      //console.log(beneficiaryData)
+      var ref = firebase
+        .firestore()
+        .collection("counselling_records")
+        .doc(name)
+        .get()
+        .then(function (snapshot) {
+          console.log("inside then")
+          setCr(snapshot.data())
+        })
     }
-    fetch("http://127.0.0.1:5050/knn", requestOptions)
-      .then(response => response.json())
-      .then(data => setMatches(data))
-      .catch(error => {
-        console.log(error)
-      })
-    // empty dependency array means this effect will only run once (like componentDidMount in classes)
-  }, [])
-
+  }, [beneficiaryData])
+  console.log(cr)
   return (
     <Layout>
       <Helmet>
         <title>Beneficiary Page - New Hope Community Services</title>
       </Helmet>
-      <Profile name="helo" age="30" marital="Married" occupation="Teacher" />
-
-      <HDBCard         
-        header="HDB"
-        items={{1:"Completed", 2:"Completed", 3:"Completed", 4:"Not Completed", 5:"Not Completed"}} 
-        clientName={"Thomas"}
+      {beneficiaryData ? (
+        <Profile
+          name={name}
+          age={beneficiaryData.age}
+          marital={beneficiaryData.marital}
+          occupation={beneficiaryData.occupation}
         />
+      ) : (
+        <div></div>
+      )}
+
+      <HDBCard
+        header="HDB"
+        items={{
+          allocation: "Completed",
+          collection: "Completed",
+          doc_approval: "Completed",
+          eligibility: "Not Completed",
+          matching: "Not Completed",
+        }}
+        clientName={"Thomas"}
+      />
+
+      {/* Items should be sent as "Completed" "Pending" "Not Completed" */}
 
       <BeneficiaryCard
         header="Counselling"
@@ -64,45 +61,8 @@ export default function BeneficiaryPage(){
           ["8 Oct 2020", "First Session with Counsellor", "Text box"],
         ]}
       />
-
-        <MatchingCard
-          header="Matches"
-          items={[
-            [
-              "Name: " + JSON.parse(matches)[0]["name"],
-              "Area: " + JSON.parse(matches)[0]["area"],
-              "Morning/night person: " +
-                JSON.parse(matches)[0]["morning_night"],
-              "Noise level: " + JSON.parse(matches)[0]["noise_level"],
-              "Age Group: " + JSON.parse(matches)[0]["age"],
-            ],
-            [
-              "Name: " + JSON.parse(matches)[1]["name"],
-              "Area: " + JSON.parse(matches)[1]["area"],
-              "Morning/night person: " +
-                JSON.parse(matches)[1]["morning_night"],
-              "Noise level: " + JSON.parse(matches)[1]["noise_level"],
-              "Age Group: " + JSON.parse(matches)[1]["age"],
-            ],
-            [
-              "Name: " + JSON.parse(matches)[2]["name"],
-              "Area: " + JSON.parse(matches)[2]["area"],
-              "Morning/night person: " +
-                JSON.parse(matches)[2]["morning_night"],
-              "Noise level: " + JSON.parse(matches)[0]["noise_level"],
-              "Age Group: " + JSON.parse(matches)[2]["age"],
-            ],
-            [
-              "Name: " + JSON.parse(matches)[3]["name"],
-              "Area: " + JSON.parse(matches)[3]["area"],
-              "Morning/night person: " +
-                JSON.parse(matches)[3]["morning_night"],
-              "Noise level: " + JSON.parse(matches)[0]["noise_level"],
-              "Age Group: " + JSON.parse(matches)[3]["age"],
-            ],
-          ]}
-        />
-
     </Layout>
   )
 }
+
+export default BeneficiaryPage
