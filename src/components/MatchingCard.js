@@ -9,7 +9,13 @@ export default function MatchingCard({ header, items }) {
     padding: "20px",
     height: "50px",
     flexStart: "start",
-    alignText: "bottom",
+    flexDirection: "row",
+    display: "flex",
+    justifyContent: "space-between",
+    verticalAlign: "middle",
+    alignItems: "center",
+    marignLeft:'10px'
+
   }
 
   const Container = {
@@ -28,10 +34,15 @@ export default function MatchingCard({ header, items }) {
     padding: "10px",
   }
 
+
   console.log(items)
   return (
     <div style={Container}>
-      <div style={Header}>{header}</div>
+      <div style={Header}>
+      <div style={{verticalAlign:'middle', display:'table-cell', marginLeft:'10px'}}> 
+        {header}
+        </div>
+      </div>
 
       {items.map((value, index) => {
         return (
@@ -57,7 +68,6 @@ export default function MatchingCard({ header, items }) {
             <div> {value[2]} </div>
             <div> {value[3]} </div>
             <div> {value[4]} </div>
-          </div>
           </td>
           </tr>
           </table>
