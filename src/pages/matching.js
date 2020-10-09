@@ -2,6 +2,7 @@ import React, { useState,useEffect } from 'react';
 import BeneficiaryCard from '../components/BeneficiaryCard'
 import MatchingCard from '../components/MatchingCard'
 import Layout from "../components/Layout"
+import MatchingCard from "../components/MatchingCard"
 
 export default function PersonalMatching(){
   const d =[{"name":"","area":"","morning_night":"","noise_level":"","age":""},{"name":"","area":"","morning_night":"","noise_level":"","age":""},{"name":"","area":"","morning_night":"","noise_level":"","age":""},{"name":"","area":"","morning_night":"","noise_level":"","age":""}]
