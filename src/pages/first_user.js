@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { useState,useEffect } from 'react';
 
   // Declare a new state variable, which we'll call "count"  const [count, setCount] = useState(0);
@@ -38,5 +39,12 @@ const FirstUser = () => {
       <hr />
     </div>
   );
+=======
+import React from "react"
+import Layout from "../components/Layout"
+
+const firstUser = () => {
+  return <Layout />
+>>>>>>> 14ff259078fed35972325e1044fd5d1969c4e5f0
 }
 export default FirstUser

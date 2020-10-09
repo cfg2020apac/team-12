@@ -1,16 +1,16 @@
 import React from "react"
+import { Link } from "gatsby"
 
 const Navbar = () => {
   return (
     <nav
       class="flex items-center justify-between flex-wrap p-6"
-      style={{ backgroundColor: "#363740" }}
+      // style={{ backgroundColor: "#363740" }}
     >
-      <div
-        class="flex items-center flex-shrink-0 mr-6"
-        style={{ color: "#A4A6B3" }}
-      >
-        <span class="font-semibold text-xl tracking-tight">Team Muffin</span>
+      <div class="flex items-center flex-shrink-0 mr-8">
+        <span class="font-semibold text-xl tracking-tight">
+          New Hope Community Services
+        </span>
       </div>
       <div class="block lg:hidden">
         <button class="flex items-center px-3 py-2 border rounded text-teal-200 border-teal-400 hover:text-white hover:border-white">
@@ -25,36 +25,30 @@ const Navbar = () => {
         </button>
       </div>
       <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
-        <div class="text-sm lg:flex-grow">
+        <div class="text-m lg:flex-grow">
           <a
             href="#responsive-header"
-            class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-6"
+            class="block mt-4 lg:inline-block lg:mt-0 text-gray-700 hover:text-gray-600 mr-6 border-b-4 border-transparent hover:border-green-1"
           >
-            Overview
+            <div class="border-b-4 px-2">Overview</div>
+          </a>
+          <a
+            href="/"
+            class="block mt-4 lg:inline-block lg:mt-0 text-gray-700 hover:text-gray-600 hover:text-white mr-6"
+          >
+            <div class="border-b-4 border-green-500 px-2">Beneficiaries</div>
           </a>
           <a
             href="#responsive-header"
-            class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-6"
+            class="block mt-4 lg:inline-block lg:mt-0 text-gray-700 hover:text-gray-600 hover:text-white mr-6"
           >
-            Beneficiaries
-          </a>
-          <a
-            href="#responsive-header"
-            class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-6"
-          >
-            Service Providers
-          </a>
-          <a
-            href="#responsive-header"
-            class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-6"
-          >
-            Matching
+            <div class="border-b-4 px-2">Matching</div>
           </a>
         </div>
         <div>
           <a
             href="#"
-            class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white mt-4 lg:mt-0"
+            class="inline-block text-sm px-4 py-2 leading-none border rounded text-gray-700 border-black hover:text-gray-600 hover:bg-gray-200 mt-4 lg:mt-0"
           >
             Login/Logout
           </a>
