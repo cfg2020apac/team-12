@@ -4,9 +4,7 @@ import Login from "../components/Login/login"
 
 const LoginPage = () => {
   return (
-    <Layout>
       <Login />
-    </Layout>
   )
 }
 
