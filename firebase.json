@@ -1,5 +1,6 @@
 {
   "hosting": {
+    "site": "jp-morgan-c945b",
     "public": "public",
     "ignore": [
       "firebase.json",

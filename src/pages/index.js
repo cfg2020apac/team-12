@@ -1,6 +1,7 @@
 import React from "react"
-import HomePage from "../components/landing/HomePage"
-import Layout from "../components/Layout"
+import Home from "../components/landing/HomePage"
+import fbConfig from "../../config/fbConfig"
+import firebase from "firebase/app"
 
 export default function Index() {
   return (
