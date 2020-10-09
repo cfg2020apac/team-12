@@ -9,8 +9,8 @@ const Navbar = () => {
 
     if (url.includes("matching")) {
       setCurrentPage("matching")
-    } else if (url.includes("dashboard")) {
-      setCurrentPage("dashboard")
+    } else if (url.includes("Dashboard")) {
+      setCurrentPage("Dashboard")
     } else if (url.includes("login")) {
       setCurrentPage("login")
     } else {
@@ -51,10 +51,10 @@ const Navbar = () => {
       <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
         <div class="text-m lg:flex-grow">
           <a
-            href="/dashboard"
+            href="/Dashboard"
             class="block mt-4 lg:inline-block lg:mt-0 text-gray-700 hover:text-gray-600 mr-6 border-b-4 border-transparent hover:border-green-1"
           >
-            {currentPage == "dashboard" ? (
+            {currentPage == "Dashboard" ? (
               <div class="border-b-4 border-green-500 px-2">Dashboard</div>
             ) : (
               <div class="border-b-4 px-2">Dashboard</div>
