@@ -54,7 +54,7 @@ const Navbar = () => {
             href="/Dashboard"
             class="block mt-4 lg:inline-block lg:mt-0 text-gray-700 hover:text-gray-600 mr-6 border-b-4 border-transparent hover:border-green-1"
           >
-            {currentPage == "dashboard" ? (
+            {currentPage == "Dashboard" ? (
               <div class="border-b-4 border-green-500 px-2">Dashboard</div>
             ) : (
               <div class="border-b-4 px-2">Dashboard</div>
