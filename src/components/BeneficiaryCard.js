@@ -16,15 +16,14 @@ firebase.initializeApp({
 
 const BeneficiaryCard = ({ header, items }) => {
   useEffect(() => {
-    console.log("here")
-    var ref = firebase
-      .firestore()
-      .collection("beneficiary")
-      .doc("1VbbY7ZEesLwnH7OuD6Z")
-      .get()
-      .then(function (snapshot) {
-        console.log(snapshot.data())
-      })
+    // console.log("here")
+    // var ref = firebase
+    //   .firestore()
+    //   .collection("beneficiary")
+    //   .doc("1VbbY7ZEesLwnH7OuD6Z")
+    //   .get()
+    //   .then(function (snapshot) {
+    //   })
   }, [])
 
   const [status, showModal] = useState(false)
@@ -41,7 +40,6 @@ const BeneficiaryCard = ({ header, items }) => {
     justifyContent: "space-between",
     verticalAlign: "middle",
     alignItems: "center",
-
   }
 
   const Container = {
@@ -68,7 +66,13 @@ const BeneficiaryCard = ({ header, items }) => {
   return (
     <div style={Container}>
       <div style={Header}>
-        <div style={{verticalAlign:'middle', display:'table-cell', marginLeft:'10px'}}> 
+        <div
+          style={{
+            verticalAlign: "middle",
+            display: "table-cell",
+            marginLeft: "10px",
+          }}
+        >
           {header}
         </div>
 

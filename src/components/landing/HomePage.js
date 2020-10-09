@@ -11,13 +11,13 @@ const HomePage = () => {
     ({
       0: "Checking Eligibility",
       1: "Pending",
-      2: "Approved"
+      2: "Approved",
     }[hdb])
-    const colourSwitch = hdb =>
+  const colourSwitch = hdb =>
     ({
       0: "text-orange-700 bg-orange-100 rounded-full dark:text-white dark:bg-orange-600",
       1: "text-yellow-700 bg-yellow-200 rounded-full dark:text-white dark:bg-orange-600",
-      2: "text-green-700 bg-green-100 rounded-full dark:bg-green-700 dark:text-green-100"
+      2: "text-green-700 bg-green-100 rounded-full dark:bg-green-700 dark:text-green-100",
     }[hdb])
 
   useEffect(() => {
@@ -47,7 +47,6 @@ const HomePage = () => {
       </Helmet>
 
       {/* LOOK HERE HOW TO ITERATE */}
-      
 
       {/* NEW table */}
       <div class="w-full overflow-hidden rounded-lg shadow">
@@ -61,55 +60,68 @@ const HomePage = () => {
               </tr>
             </thead>
             <tbody class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800">
-            {data ? data.map(i => <tr class="text-gray-700 dark:text-gray-400">
-                <td class="px-4 py-3">
-                  <div class="flex items-center text-sm">
-                    <div class="relative hidden w-8 h-8 mr-3 rounded-full md:block">
-                      <img
-                        class="object-cover w-full h-full rounded-full"
-                        src="https://images.unsplash.com/flagged/photo-1570612861542-284f4c12e75f?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=200&fit=max&ixid=eyJhcHBfaWQiOjE3Nzg0fQ"
-                        alt=""
-                        loading="lazy"
-                      />
-                      <div
-                        class="absolute inset-0 rounded-full shadow-inner"
-                        aria-hidden="true"
-                      ></div>
-                    </div>
-                    <div>
-                      <p class="font-semibold">{i.name}</p>
-                      <p class="text-xs text-gray-600 dark:text-gray-400">
-                        <Link to={`../BeneficiaryPage`} state={i, i.name}>More Details</Link>
-                      </p>
-                    </div>
-                  </div>
-                </td>
-                <td class="px-4 py-3 text-sm">
-                  <img
-                    src="https://pickaface.net/gallery/avatar/unr_random_180410_1905_z1exb.png"
-                    class="inline object-cover w-8 h-8 mr-4 rounded-full"
-                    alt="profile picture"
-                    title="Service Provider 1"
-                  />
-                  <img
-                    src="https://pickaface.net/gallery/avatar/unr_random_180410_1905_z1exb.png"
-                    class="inline object-cover w-8 h-8 mr-4 rounded-full"
-                    alt="profile picture"
-                    title="Service Provider 2"
-                  />
-                  <img
-                    src="https://pickaface.net/gallery/avatar/unr_random_180410_1905_z1exb.png"
-                    class="inline object-cover w-8 h-8 mr-4 rounded-full"
-                    alt="profile picture"
-                    title="Service Provider 3"
-                  />
-                </td>
-                <td class="px-4 py-3 text-xs">
-                  <span class={"px-2 py-1 font-semibold leading-tight "+(colourSwitch(i.hdb))}>
-                    {hdbSwitch(i.hdb)}
-                  </span>
-                </td>
-              </tr>) : null}
+              {data
+                ? data.map(i => (
+                    <tr class="text-gray-700 dark:text-gray-400">
+                      <td class="px-4 py-3">
+                        <div class="flex items-center text-sm">
+                          <div class="relative hidden w-8 h-8 mr-3 rounded-full md:block">
+                            <img
+                              class="object-cover w-full h-full rounded-full"
+                              src="https://images.unsplash.com/flagged/photo-1570612861542-284f4c12e75f?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=200&fit=max&ixid=eyJhcHBfaWQiOjE3Nzg0fQ"
+                              alt=""
+                              loading="lazy"
+                            />
+                            <div
+                              class="absolute inset-0 rounded-full shadow-inner"
+                              aria-hidden="true"
+                            ></div>
+                          </div>
+                          <div>
+                            <p class="font-semibold">{i.name}</p>
+                            <p class="text-xs text-gray-600 dark:text-gray-400">
+                              {i && i.name ? (
+                                <Link to={`../BeneficiaryPage`} state={{ i }}>
+                                  More Details
+                                </Link>
+                              ) : null}
+                            </p>
+                          </div>
+                        </div>
+                      </td>
+                      <td class="px-4 py-3 text-sm">
+                        <img
+                          src="https://pickaface.net/gallery/avatar/unr_random_180410_1905_z1exb.png"
+                          class="inline object-cover w-8 h-8 mr-4 rounded-full"
+                          alt="profile picture"
+                          title="Service Provider 1"
+                        />
+                        <img
+                          src="https://pickaface.net/gallery/avatar/unr_random_180410_1905_z1exb.png"
+                          class="inline object-cover w-8 h-8 mr-4 rounded-full"
+                          alt="profile picture"
+                          title="Service Provider 2"
+                        />
+                        <img
+                          src="https://pickaface.net/gallery/avatar/unr_random_180410_1905_z1exb.png"
+                          class="inline object-cover w-8 h-8 mr-4 rounded-full"
+                          alt="profile picture"
+                          title="Service Provider 3"
+                        />
+                      </td>
+                      <td class="px-4 py-3 text-xs">
+                        <span
+                          class={
+                            "px-2 py-1 font-semibold leading-tight " +
+                            colourSwitch(i.hdb)
+                          }
+                        >
+                          {hdbSwitch(i.hdb)}
+                        </span>
+                      </td>
+                    </tr>
+                  ))
+                : null}
             </tbody>
           </table>
         </div>

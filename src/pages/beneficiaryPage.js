@@ -7,34 +7,37 @@ import { Helmet } from "react-helmet"
 import firebase from "firebase"
 import "firebase/firestore"
 
-const BeneficiaryPage = ({ beneficiaryData, name }) => {
-  const [cr, setCr] = useState()
+const BeneficiaryPage = ({ location }) => {
+  const [bd, setBd] = useState(null)
+
   useEffect(() => {
-    if (beneficiaryData !== undefined && name !== undefined) {
-      //console.log(beneficiaryData)
-      var ref = firebase
-        .firestore()
-        .collection("counselling_records")
-        .doc(name)
-        .get()
-        .then(function (snapshot) {
-          console.log("inside then")
-          setCr(snapshot.data())
-        })
-    }
-  }, [beneficiaryData])
-  console.log(cr)
+    setBd(location.state.i)
+  }, [location])
+
+  // useEffect(() => {
+  //   var ref = firebase
+  //     .firestore()
+  //     .collection("counselling_records")
+  //     .doc(bd.name)
+  //     .get()
+  //     .then(function (snapshot) {
+  //       console.log("inside then")
+  //       setCr(snapshot.data())
+  //     })
+  // }, [bd])
+
   return (
     <Layout>
       <Helmet>
         <title>Beneficiary Page - New Hope Community Services</title>
       </Helmet>
-      {beneficiaryData ? (
+
+      {bd ? (
         <Profile
-          name={name}
-          age={beneficiaryData.age}
-          marital={beneficiaryData.marital}
-          occupation={beneficiaryData.occupation}
+          name={bd.name}
+          age={bd.age}
+          marital={bd.marital}
+          occupation={bd.occupation}
         />
       ) : (
         <div></div>
