@@ -13,7 +13,6 @@ export default function BeneficiaryCard({header , items}){
         width: '100%',
         height: '50px',
         flexStart:'start',
-
         flexDirection: "row",
         display: "flex",
         justifyContent: 'space-between',
@@ -61,7 +60,7 @@ export default function BeneficiaryCard({header , items}){
    
             
             {
-                items.map((value, index) => {
+                items.slice(0).reverse().map((value, index) => {
                     return <div style={GreyCards} key={index}> 
                         Date: {value[0]} 
                         <div> <strong>{value[1]}</strong> </div> 
