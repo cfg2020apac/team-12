@@ -1,12 +1,14 @@
 export const doughnutLegends = [
-  { title: 'Checking Eligibility', color: 'bg-red-400' },
-  { title: 'Pending Match', color: 'bg-yellow-400' },
-  { title: 'Approved', color: 'bg-green-400' },
+  { title: 'Checking Eligibility', color: 'bg-red-500' },
+  { title: 'Document Approval', color: 'bg-orange-400' },
+  { title: 'Matching', color: 'bg-yellow-500' },
+  { title: 'Allocating', color: 'bg-green-600' },
+  { title: 'Collected', color: 'bg-blue-900' },
 ]
 
 export const lineLegends = [
-  { title: 'Current Beneficiaries in shelter', color: 'bg-teal-600' },
-  { title: 'Beneficiaries that moved into housing', color: 'bg-purple-600' },
+  { title: 'Total Beneficiaries currently in shelter', color: 'bg-teal-600' },
+  { title: 'Number moved into housing within the month', color: 'bg-purple-600' },
 ]
 
 export const barLegends = [
@@ -18,16 +20,16 @@ export const doughnutOptions = {
   data: {
     datasets: [
       {
-        data: [10, 20, 70],
+        data: [10, 20, 20, 30, 20],
         /**
          * These colors come from Tailwind CSS palette
          * https://tailwindcss.com/docs/customizing-colors/#default-color-palette
          */
-        backgroundColor: ['#fa8f8f', '#eedc7c', '#5dde6a'],
+        backgroundColor: ['#e76f51', '#f4a261', '#e9c46a', '#2a9d8f', '#264653'],
         label: 'Dataset 1',
       },
     ],
-    labels: ['Checking Eligibility', 'Pending Match', 'Approved'],
+    labels: ['Checking Eligibility', 'Document Approval', 'Matching', 'Allocating', 'Collected'],
   },
   options: {
     responsive: true,
@@ -50,7 +52,7 @@ export const lineOptions = {
          */
         backgroundColor: '#0694a2',
         borderColor: '#0694a2',
-        data: [43, 48, 40, 54, 67, 73, 70],
+        data: [9, 7, 8, 6, 8, 9, 11],
         fill: false,
       },
       {
@@ -62,7 +64,7 @@ export const lineOptions = {
          */
         backgroundColor: '#7e3af2',
         borderColor: '#7e3af2',
-        data: [24, 50, 64, 74, 52, 51, 65],
+        data: [1, 2, 0, 1, 1, 0, 2],
       },
     ],
   },

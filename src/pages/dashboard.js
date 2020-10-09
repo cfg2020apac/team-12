@@ -8,7 +8,9 @@ import PageTitle from "../components/Typography/PageTitle"
 // import { ChatIcon, CartIcon, MoneyIcon, PeopleIcon } from '../icons'
 // import RoundIcon from '../components/RoundIcon'
 import response from "../utils/demo/tableData"
-
+import { Link } from "gatsby"
+import firebase from "firebase"
+import "firebase/firestore"
 import {
   doughnutOptions,
   lineOptions,
@@ -19,23 +21,40 @@ import Layout from "../components/Layout"
 import { Helmet } from "react-helmet"
 
 function Dashboard() {
-  const [page, setPage] = useState(1)
-  const [data, setData] = useState([])
+  const [hdb_eligibility, set_HDB_eligibility] = useState([])
+  const [num_beneficiary, set_num_beneficiary] = useState([])
 
-  // pagination setup
-  const resultsPerPage = 10
-  const totalResults = response.length
-
-  // pagination change control
-  function onPageChange(p) {
-    setPage(p)
-  }
-
-  // on page change, load new sliced data
-  // here you would make another server request for new data
   useEffect(() => {
-    setData(response.slice((page - 1) * resultsPerPage, page * resultsPerPage))
-  }, [page])
+    var ref = firebase
+      .firestore()
+      .collection("hdb_eligibility")
+      .get()
+      .then(function (snapshot) {
+        let arr = []
+        snapshot.forEach(function (child) {
+          arr.push(child.data())
+          // getting all the data from each child
+        })
+
+        set_HDB_eligibility(arr)
+        set_num_beneficiary(arr.length)
+      })
+  }, [])
+
+  // Logic to count number of benficiaries in each stage
+  var counts = {0:0, 1:0, 2:0, 3:0, 4:0}
+  console.log("hdb_eligibility", hdb_eligibility)
+  hdb_eligibility.forEach(e => counts[e.stage]++)
+  var stage_count = []
+  for (var key in counts) {
+    if (counts.hasOwnProperty(key)) {
+      stage_count.push(counts[key]);
+    }
+  }
+  var test = doughnutOptions
+  test.data.datasets[0].data = stage_count;
+
+
 
   return (
     <div>
@@ -48,7 +67,7 @@ function Dashboard() {
 
           {/* <!-- Cards --> */}
           <div className="grid gap-6 mb-8 md:grid-cols-2 xl:grid-cols-4">
-            <InfoCard title="Total Beneficiaries" value="156">
+            <InfoCard title="Total Beneficiaries" value={num_beneficiary}>
               {/*<RoundIcon*/}
               {/*  icon={PeopleIcon}*/}
               {/*  iconColorClass="text-orange-500 dark:text-orange-100"*/}
