@@ -4,7 +4,7 @@ import { Link } from "gatsby"
 const Navbar = () => {
   return (
     <nav
-      class="flex items-center justify-between flex-wrap p-6"
+      class="flex items-center justify-between flex-wrap p-6 shadow"
       // style={{ backgroundColor: "#363740" }}
     >
       <div class="flex items-center flex-shrink-0 mr-8">
