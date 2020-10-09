@@ -1,6 +1,6 @@
 import React from "react"
 import { Helmet } from "react-helmet"
-
+import { Link } from "gatsby"
 const HomePage = () => {
   return (
     <div class="border rounded-lg m-4">
