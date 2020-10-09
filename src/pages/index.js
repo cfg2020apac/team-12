@@ -1,10 +1,11 @@
 import React from "react"
-import Home from "../components/landing/HomePage"
+import HomePage from "../components/landing/HomePage"
+import Layout from "../components/Layout"
 
 export default function Index() {
   return (
-    <div>
-      <Home />
-    </div>
+    <Layout>
+      <HomePage />
+    </Layout>
   )
 }
