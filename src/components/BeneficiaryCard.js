@@ -19,12 +19,11 @@ const BeneficiaryCard = ({ header, items }) => {
     console.log("here")
     var ref = firebase
       .firestore()
-      .collection("test-data")
+      .collection("beneficiary")
+      .doc("1VbbY7ZEesLwnH7OuD6Z")
       .get()
       .then(function (snapshot) {
-        snapshot.forEach(function (child) {
-          console.log(child.id)
-        })
+        console.log(snapshot.data())
       })
   }, [])
 

@@ -1,21 +1,22 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect } from "react"
 
-import InfoCard from '../components/Cards/InfoCard'
-import ChartCard from '../components/Chart/ChartCard'
-import { Doughnut, Line } from 'react-chartjs-2'
-import ChartLegend from '../components/Chart/ChartLegend'
-import PageTitle from '../components/Typography/PageTitle'
+import InfoCard from "../components/Cards/InfoCard"
+import ChartCard from "../components/Chart/ChartCard"
+import { Doughnut, Line } from "react-chartjs-2"
+import ChartLegend from "../components/Chart/ChartLegend"
+import PageTitle from "../components/Typography/PageTitle"
 // import { ChatIcon, CartIcon, MoneyIcon, PeopleIcon } from '../icons'
 // import RoundIcon from '../components/RoundIcon'
-import response from '../utils/demo/tableData'
+import response from "../utils/demo/tableData"
 
 import {
   doughnutOptions,
   lineOptions,
   doughnutLegends,
   lineLegends,
-} from '../utils/demo/chartsData'
+} from "../utils/demo/chartsData"
 import Layout from "../components/Layout"
+import { Helmet } from "react-helmet"
 
 function Dashboard() {
   const [page, setPage] = useState(1)
@@ -38,9 +39,11 @@ function Dashboard() {
 
   return (
     <>
+      <Helmet>
+        <title>Dashboard - New Hope Community Services</title>
+      </Helmet>
       <Layout>
         <div className="border px-4 py-3 rounded-lg m-4">
-
           <PageTitle>Dashboard</PageTitle>
 
           {/* <!-- Cards --> */}
@@ -72,7 +75,10 @@ function Dashboard() {
               {/*/>*/}
             </InfoCard>
 
-            <InfoCard title="Beneficiaries found housing in this month" value="12">
+            <InfoCard
+              title="Beneficiaries found housing in this month"
+              value="12"
+            >
               {/*<RoundIcon*/}
               {/*  icon={ChatIcon}*/}
               {/*  iconColorClass="text-teal-500 dark:text-teal-100"*/}
