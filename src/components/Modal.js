@@ -1,6 +1,5 @@
 import React , {useState} from 'react';
 
-
 const Modal = (props) => {
   const { setShowModal, items } = props;
   const [newPost, setNewPost] = useState("")
@@ -37,6 +36,7 @@ const Modal = (props) => {
         {/*body*/}
         <div className="relative p-6 flex flex-col" >
                 <div style={{margin:'10px'}}>
+                    {/* Date: <DayPicker onDayClick={(day) => setNewDate({ day })} /> */}
                 Date:          <input type='text' className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-4/6 py-2 px-4 text-gray-700" placeholder="Add session date" onChange={e => setNewDate(e.target.value)}  value={newDate}  />
                 </div>
 
