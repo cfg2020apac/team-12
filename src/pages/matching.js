@@ -5,10 +5,10 @@ import Layout from "../components/Layout"
 
 export default function PersonalMatching() {
   const d = [
-    { name: "", area: "", morning_night: "", noise_level: "", age: "" },
-    { name: "", area: "", morning_night: "", noise_level: "", age: "" },
-    { name: "", area: "", morning_night: "", noise_level: "", age: "" },
-    { name: "", area: "", morning_night: "", noise_level: "", age: "" },
+    { name: "a", area: "", morning_night: "", noise_level: "", age: "" },
+    { name: "a", area: "", morning_night: "", noise_level: "", age: "" },
+    { name: "a", area: "", morning_night: "", noise_level: "", age: "" },
+    { name: "a", area: "", morning_night: "", noise_level: "", age: "" },
   ]
 
   const [matches, setMatches] = useState(JSON.stringify(d))
@@ -53,38 +53,38 @@ export default function PersonalMatching() {
           ]}
         />
         <MatchingCard
-          header="Matches"
+          header="Matching Possibilities"
           items={[
             [
-              "Name: " + JSON.parse(matches)[0]["name"],
+              JSON.parse(matches)[0]["name"][0].toUpperCase() + JSON.parse(matches)[0]["name"].substring(1),
               "Area: " + JSON.parse(matches)[0]["area"],
-              "Morning/night person: " +
+              "Morning/Night Person: " +
                 JSON.parse(matches)[0]["morning_night"],
-              "Noise level: " + JSON.parse(matches)[0]["noise_level"],
+              "Noise Level: " + JSON.parse(matches)[0]["noise_level"],
               "Age Group: " + JSON.parse(matches)[0]["age"],
             ],
             [
-              "Name: " + JSON.parse(matches)[1]["name"],
+              JSON.parse(matches)[1]["name"][0].toUpperCase() + JSON.parse(matches)[1]["name"].substring(1),
               "Area: " + JSON.parse(matches)[1]["area"],
-              "Morning/night person: " +
+              "Morning/Night Person: " +
                 JSON.parse(matches)[1]["morning_night"],
-              "Noise level: " + JSON.parse(matches)[1]["noise_level"],
+              "Noise Level: " + JSON.parse(matches)[1]["noise_level"],
               "Age Group: " + JSON.parse(matches)[1]["age"],
             ],
             [
-              "Name: " + JSON.parse(matches)[2]["name"],
+              JSON.parse(matches)[2]["name"][0].toUpperCase() + JSON.parse(matches)[2]["name"].substring(1),
               "Area: " + JSON.parse(matches)[2]["area"],
-              "Morning/night person: " +
+              "Morning/Night Person: " +
                 JSON.parse(matches)[2]["morning_night"],
-              "Noise level: " + JSON.parse(matches)[0]["noise_level"],
+              "Noise Level: " + JSON.parse(matches)[0]["noise_level"],
               "Age Group: " + JSON.parse(matches)[2]["age"],
             ],
             [
-              "Name: " + JSON.parse(matches)[3]["name"],
+              JSON.parse(matches)[3]["name"][0].toUpperCase() + JSON.parse(matches)[3]["name"].substring(1),
               "Area: " + JSON.parse(matches)[3]["area"],
-              "Morning/night person: " +
+              "Morning/Night Person: " +
                 JSON.parse(matches)[3]["morning_night"],
-              "Noise level: " + JSON.parse(matches)[0]["noise_level"],
+              "Noise Level: " + JSON.parse(matches)[0]["noise_level"],
               "Age Group: " + JSON.parse(matches)[3]["age"],
             ],
           ]}
