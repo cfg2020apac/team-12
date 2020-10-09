@@ -4,6 +4,7 @@ import pandas as pd
 import logging
 import json
 
+
 from flask import request, jsonify;
 
 from cfg import app;

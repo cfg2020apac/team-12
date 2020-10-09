@@ -1,0 +1,10 @@
+.grayscaleit {
+  filter: gray; /* IE6-9 */
+  -webkit-filter: grayscale(100%); /* Chrome 19+ & Safari 6+ */
+  transition: 0.3s;
+}
+
+.grayscaleit:hover {
+  filter: none;
+  -webkit-filter: grayscale(70%);
+}
