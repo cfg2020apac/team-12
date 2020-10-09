@@ -81,7 +81,8 @@ const BeneficiaryCard = ({ header, items }) => {
       {items.reverse().map((value, index) => {
         return (
           <div style={GreyCards} key={index}>
-            Date: {secondsToString(value.post_date.seconds)}
+            Date:{" "}
+            {value.post_date ? secondsToString(value.post_date.seconds) : null}
             <div>
               <strong>{value.post_title}</strong>{" "}
             </div>
