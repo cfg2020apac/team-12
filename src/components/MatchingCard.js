@@ -45,7 +45,6 @@ export default function MatchingCard({ header, items }) {
                 src="https://images.unsplash.com/flagged/photo-1570612861542-284f4c12e75f?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=200&fit=max&ixid=eyJhcHBfaWQiOjE3Nzg0fQ"
                 alt=""
                 loading="lazy"
-                style="max-height: 10px; max-width: 10px;"
               />
               </div>
             </div>
@@ -57,7 +56,6 @@ export default function MatchingCard({ header, items }) {
             <div> {value[2]} </div>
             <div> {value[3]} </div>
             <div> {value[4]} </div>
-          </div>
           </td>
           </tr>
           </table>
