@@ -58,7 +58,7 @@ def evaluate_knn():
 
     res = og_df.iloc[indices[0]]
 
-    result=res.to_json(orient="index")
+    result=res.to_json(orient="records")
     logging.info("My result :{}".format(result))
     return json.dumps(result);
 
