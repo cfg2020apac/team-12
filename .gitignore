@@ -9,3 +9,4 @@ Team 12/
 
 node_modules/
 public/
+.cache/
