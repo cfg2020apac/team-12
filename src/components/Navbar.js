@@ -7,8 +7,8 @@ const Navbar = () => {
   useEffect(() => {
     let url = window.location.pathname
 
-    if (url.includes("matching")) {
-      setCurrentPage("matching")
+    if (url.includes("add_beneficiary")) {
+      setCurrentPage("add_beneficiary")
     } else if (url.includes("dashboard")) {
       setCurrentPage("dashboard")
     } else if (url.includes("login")) {
@@ -71,13 +71,13 @@ const Navbar = () => {
             )}
           </a>
           <a
-            href="/matching"
+            href="/add_beneficiary"
             class="block mt-4 lg:inline-block lg:mt-0 text-gray-700 hover:text-gray-600 hover:text-white mr-6"
           >
-            {currentPage == "matching" ? (
-              <div class="border-b-4 border-green-500 px-2">Matching</div>
+            {currentPage == "add_beneficiary" ? (
+              <div class="border-b-4 border-green-500 px-2">Add Beneficiary</div>
             ) : (
-              <div class="border-b-4 px-2">Matching</div>
+              <div class="border-b-4 px-2">Add Beneficiary</div>
             )}
           </a>
         </div>
