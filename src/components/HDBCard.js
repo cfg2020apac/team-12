@@ -75,21 +75,21 @@ export default function BeneficiaryCard({header , items, clientName}){
         </div>            
             {
                 Object.keys(items).map((value, index) => {
-                    console.log(index)
-                    return <div style={GreyCards} key={index}> 
-
-                    <div>
-                    <label>
-                        { index +1  + ". " }
-                    </label>
-                        {HDB_DICT[value]}  
-                    </div>
-   
-                    <div>
-                        {icon(items[value])}
-                    </div>
-
-                    </div>
+                    if(value != 'stage'){
+                        return <div style={GreyCards} key={index}> 
+                        <div>
+                        <label>
+                            { index +1  + ". " }
+                        </label>
+                            {HDB_DICT[value]}  
+                        </div>
+       
+                        <div>
+                            {icon(items[value])}
+                        </div>
+    
+                        </div>
+                    }
                 })
             }
     </div>
