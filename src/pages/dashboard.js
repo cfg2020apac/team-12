@@ -38,7 +38,7 @@ function Dashboard() {
   }, [page])
 
   return (
-    <>
+    <div>
       <Helmet>
         <title>Dashboard - New Hope Community Services</title>
       </Helmet>
@@ -103,7 +103,7 @@ function Dashboard() {
           </div>
         </div>
       </Layout>
-    </>
+    </div>
   )
 }
 
