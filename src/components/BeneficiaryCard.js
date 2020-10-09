@@ -3,16 +3,16 @@ import Modal from "../components/Modal"
 import firebase from "firebase"
 import "firebase/firestore"
 
-firebase.initializeApp({
-  apiKey: "AIzaSyDzrk0KMpEdFASSX3n0Z_C9X4m-tve3C1k",
-  authDomain: "jp-morgan-c945b.firebaseapp.com",
-  databaseURL: "https://jp-morgan-c945b.firebaseio.com",
-  projectId: "jp-morgan-c945b",
-  storageBucket: "jp-morgan-c945b.appspot.com",
-  messagingSenderId: "542910140897",
-  appId: "1:542910140897:web:f07a946fffffb2407ec2a0",
-  measurementId: "G-HZQ4PB8RPC",
-})
+// firebase.initializeApp({
+//   apiKey: "AIzaSyDzrk0KMpEdFASSX3n0Z_C9X4m-tve3C1k",
+//   authDomain: "jp-morgan-c945b.firebaseapp.com",
+//   databaseURL: "https://jp-morgan-c945b.firebaseio.com",
+//   projectId: "jp-morgan-c945b",
+//   storageBucket: "jp-morgan-c945b.appspot.com",
+//   messagingSenderId: "542910140897",
+//   appId: "1:542910140897:web:f07a946fffffb2407ec2a0",
+//   measurementId: "G-HZQ4PB8RPC",
+// })
 
 const BeneficiaryCard = ({ header, items }) => {
   function secondsToString(seconds) {
