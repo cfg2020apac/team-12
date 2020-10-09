@@ -30,7 +30,7 @@ export default function PersonalMatching() {
       },
       redirect: "follow", // manual, *follow, error
       referrerPolicy: "no-referrer",
-      body: JSON.stringify({ name: "yee han" }),
+      body: JSON.stringify({ name: "yeehan" }),
     }
     fetch("http://127.0.0.1:5050/knn", requestOptions)
       .then(response => response.json())
