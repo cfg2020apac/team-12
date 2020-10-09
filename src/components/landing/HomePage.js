@@ -1,6 +1,6 @@
 import React from "react"
 import ProfilePic from "../../../static/person-placeholder.png"
-
+import { Link } from "gatsby"
 const HomePage = () => {
   return (
     <div class="border rounded-lg m-4">
@@ -30,7 +30,7 @@ const HomePage = () => {
               </div>
               <div class="flex flex-col">
                 <div class="flex text-center">helo</div>
-                <div class="flex">More details</div>
+                <div class="flex"> <Link to="../beneficiaryPage">More details</Link></div>
               </div>
             </div>
 
@@ -63,7 +63,7 @@ const HomePage = () => {
             </div>
             <div class="flex flex-col">
               <div class="flex text-center">helo 2</div>
-              <div class="flex">More details</div>
+              <div class="flex"><Link to="../beneficiaryPage">More details</Link></div>
             </div>
           </div>
         </a>
