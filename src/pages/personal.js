@@ -2,11 +2,13 @@ import React from "react"
 import ProfilePic from "../../static/person-placeholder.png"
 import Layout from "../components/Layout"
 import Profile from "../components/Profile"
+import BeneficiaryCard from '../components/BeneficiaryCard'
 
 const personal = () => {
   return (
           <Layout>
            <Profile/>
+           <BeneficiaryCard header="HDB" items={[ ['10 Oct 2020', 'Last Session with Counsellor', 'Text box'], ['8 Oct 2020', 'First Session with Counsellor', 'Text box'] ]} />
           </Layout>
   )
 }
