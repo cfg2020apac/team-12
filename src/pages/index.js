@@ -3,8 +3,9 @@ import Layout from "../components/Layout"
 import HomePage from "../components/landing/HomePage"
 
 export default function Index() {
+  let pageName = "index"
   return (
-    <Layout>
+    <Layout activePage={pageName}>
       <HomePage />
     </Layout>
   )
