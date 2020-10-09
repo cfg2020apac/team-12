@@ -7,60 +7,77 @@ import { Helmet } from "react-helmet"
 import firebase from "firebase"
 import "firebase/firestore"
 
-const BeneficiaryPage = ({ beneficiaryData, name }) => {
-  const [cr, setCr] = useState()
+const BeneficiaryPage = ({ location }) => {
+  const [bd, setBd] = useState(null)
+  const [cr, setCr] = useState(null)
+  const [hdb, setHDB] = useState(null)
+
   useEffect(() => {
-    if (beneficiaryData !== undefined && name !== undefined) {
-      //console.log(beneficiaryData)
-      var ref = firebase
-        .firestore()
-        .collection("counselling_records")
-        .doc(name)
-        .get()
-        .then(function (snapshot) {
-          console.log("inside then")
-          setCr(snapshot.data())
-        })
+    setBd(location.state.i)
+  }, [location])
+
+  useEffect(() => {
+    if (bd == null) {
+      return
     }
-  }, [beneficiaryData])
-  console.log(cr)
+    firebase
+      .firestore()
+      .collection("counselling_records")
+      .doc(bd.name)
+      .get()
+      .then(function (snapshot) {
+        setCr(snapshot.data())
+      })
+
+    firebase
+      .firestore()
+      .collection("hdb_eligibility")
+      .doc(bd.name)
+      .get()
+      .then(function (snapshot) {
+        setHDB(snapshot.data())
+      })
+  }, [bd])
+
   return (
     <Layout>
       <Helmet>
         <title>Beneficiary Page - New Hope Community Services</title>
       </Helmet>
-      {beneficiaryData ? (
+
+      {bd ? (
         <Profile
-          name={name}
-          age={beneficiaryData.age}
-          marital={beneficiaryData.marital}
-          occupation={beneficiaryData.occupation}
+          name={bd.name}
+          age={bd.age}
+          marital={bd.marital}
+          occupation={bd.occupation}
         />
       ) : (
         <div></div>
       )}
 
-      <HDBCard
-        header="HDB"
-        items={{
-          allocation: "Completed",
-          collection: "Completed",
-          doc_approval: "Completed",
-          eligibility: "Not Completed",
-          matching: "Not Completed",
-        }}
-        clientName={"Thomas"}
-      />
+      {hdb ? (
+        <HDBCard
+          header="HDB"
+          items={{
+            allocation: hdb.allocation,
+            collection: hdb.collection,
+            doc_approval: hdb.doc_approval,
+            eligibility: hdb.eligibility,
+            matching: hdb.matching,
+          }}
+          clientName={"Thomas"}
+        />
+      ) : (
+        <div></div>
+      )}
 
       {/* Items should be sent as "Completed" "Pending" "Not Completed" */}
-
-      <BeneficiaryCard
-        header="Counselling"
-        items={[
-          ["10 Oct 2020", "Last Session with Counsellor", "Text box"],
-          ["8 Oct 2020", "First Session with Counsellor", "Text box"],
-        ]}
-      />
+      {cr ? (
+        <BeneficiaryCard header="Counselling" items={cr.posts} />
+      ) : (
+        <div></div>
+      )}
     </Layout>
   )
 }
