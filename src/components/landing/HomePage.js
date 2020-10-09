@@ -1,6 +1,6 @@
 import React from "react"
 import { Helmet } from "react-helmet"
-
+import { Link } from "gatsby"
 const HomePage = () => {
   return (
     <div class="border rounded-lg m-4">
@@ -39,7 +39,7 @@ const HomePage = () => {
                     <div>
                       <p class="font-semibold">Person #1</p>
                       <p class="text-xs text-gray-600 dark:text-gray-400">
-                        More Details
+                      <Link to="../beneficiaryPage">More Details</Link>
                       </p>
                     </div>
                   </div>
@@ -89,7 +89,7 @@ const HomePage = () => {
                     <div>
                       <p class="font-semibold">Person #2</p>
                       <p class="text-xs text-gray-600 dark:text-gray-400">
-                        More Details
+                      <Link to="../beneficiaryPage">More Details</Link>
                       </p>
                     </div>
                   </div>
@@ -139,7 +139,7 @@ const HomePage = () => {
                     <div>
                       <p class="font-semibold">Person #3</p>
                       <p class="text-xs text-gray-600 dark:text-gray-400">
-                        More Details
+                      <Link to="../beneficiaryPage">More Details</Link>
                       </p>
                     </div>
                   </div>
