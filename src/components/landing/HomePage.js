@@ -3,13 +3,17 @@ import { Helmet } from "react-helmet"
 import { Link } from "gatsby"
 import firebase from "firebase"
 import "firebase/firestore"
+
 const HomePage = () => {
   const [data, setData] = useState()
-  const hdbSwitch = (hdb) => ({
-    "0":"Checking Eligibility",
-    "1":"Pending",
-    "2":"Approved"
-  })[hdb]
+
+  const hdbSwitch = hdb =>
+    ({
+      0: "Checking Eligibility",
+      1: "Pending",
+      2: "Approved",
+    }[hdb])
+
   useEffect(() => {
     //console.log("here")
     var ref = firebase
@@ -17,69 +21,27 @@ const HomePage = () => {
       .collection("beneficiary")
       .get()
       .then(function (snapshot) {
+        let arr = []
         snapshot.forEach(function (child) {
-          
-          <tr class="text-gray-700 dark:text-gray-400">
-                <td class="px-4 py-3">
-                  <div class="flex items-center text-sm">
-                    <div class="relative hidden w-8 h-8 mr-3 rounded-full md:block">
-                      <img
-                        class="object-cover w-full h-full rounded-full"
-                        src="https://images.unsplash.com/flagged/photo-1570612861542-284f4c12e75f?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=200&fit=max&ixid=eyJhcHBfaWQiOjE3Nzg0fQ"
-                        alt=""
-                        loading="lazy"
-                      />
-                      <div
-                        class="absolute inset-0 rounded-full shadow-inner"
-                        aria-hidden="true"
-                      ></div>
-                    </div>
-                    <div>
-                      <p class="font-semibold">{child.data().name}</p>
-                      <p class="text-xs text-gray-600 dark:text-gray-400">
-                      <Link to="../beneficiaryPage">More Details</Link>
-                      </p>
-                    </div>
-                  </div>
-                </td>
-                <td class="px-4 py-3 text-sm">
-                  <img
-                    src="https://pickaface.net/gallery/avatar/unr_random_180410_1905_z1exb.png"
-                    class="inline object-cover w-8 h-8 mr-4 rounded-full"
-                    alt="profile picture"
-                    title="Service Provider 1"
-                  />
-                  <img
-                    src="https://pickaface.net/gallery/avatar/unr_random_180410_1905_z1exb.png"
-                    class="inline object-cover w-8 h-8 mr-4 rounded-full"
-                    alt="profile picture"
-                    title="Service Provider 2"
-                  />
-                  <img
-                    src="https://pickaface.net/gallery/avatar/unr_random_180410_1905_z1exb.png"
-                    class="inline object-cover w-8 h-8 mr-4 rounded-full"
-                    alt="profile picture"
-                    title="Service Provider 3"
-                  />
-                </td>
-                <td class="px-4 py-3 text-xs">
-                  <span class="px-2 py-1 font-semibold leading-tight text-green-700 bg-green-100 rounded-full dark:bg-green-700 dark:text-green-100">
-                    {hdbSwitch(child.data().hdb)}
-                  </span>
-                </td>
-              </tr>
-              
+          arr.push(child.data())
+          // getting all the data from each child
         })
+
+        setData(arr)
       })
-      setData(ref)
   }, [])
-  {console.log("data", data)}
+  {
+    console.log("data", data)
+  }
   return (
     <div class="border rounded-lg m-4">
       {/* title tags */}
       <Helmet>
         <title>Beneficiary List - New Hope Community Services</title>
       </Helmet>
+
+      {/* LOOK HERE HOW TO ITERATE */}
+      {data ? data.map(i => i.age + " ") : null}
 
       {/* NEW table */}
       <div class="w-full overflow-hidden rounded-lg shadow">
@@ -93,7 +55,6 @@ const HomePage = () => {
               </tr>
             </thead>
             <tbody class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800">
-              {data}
               <tr class="text-gray-700 dark:text-gray-400">
                 <td class="px-4 py-3">
                   <div class="flex items-center text-sm">
@@ -112,7 +73,7 @@ const HomePage = () => {
                     <div>
                       <p class="font-semibold">Person #1</p>
                       <p class="text-xs text-gray-600 dark:text-gray-400">
-                      <Link to="../beneficiaryPage">More Details</Link>
+                        <Link to="../beneficiaryPage">More Details</Link>
                       </p>
                     </div>
                   </div>
@@ -143,7 +104,6 @@ const HomePage = () => {
                   </span>
                 </td>
               </tr>
-
               <tr class="text-gray-700 dark:text-gray-400">
                 <td class="px-4 py-3">
                   <div class="flex items-center text-sm">
@@ -162,7 +122,7 @@ const HomePage = () => {
                     <div>
                       <p class="font-semibold">Person #2</p>
                       <p class="text-xs text-gray-600 dark:text-gray-400">
-                      <Link to="../beneficiaryPage">More Details</Link>
+                        <Link to="../beneficiaryPage">More Details</Link>
                       </p>
                     </div>
                   </div>
@@ -193,7 +153,6 @@ const HomePage = () => {
                   </span>
                 </td>
               </tr>
-
               <tr class="text-gray-700 dark:text-gray-400">
                 <td class="px-4 py-3">
                   <div class="flex items-center text-sm">
@@ -212,7 +171,7 @@ const HomePage = () => {
                     <div>
                       <p class="font-semibold">Person #3</p>
                       <p class="text-xs text-gray-600 dark:text-gray-400">
-                      <Link to="../beneficiaryPage">More Details</Link>
+                        <Link to="../beneficiaryPage">More Details</Link>
                       </p>
                     </div>
                   </div>
