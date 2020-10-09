@@ -24,12 +24,13 @@ const BeneficiaryPage = ({beneficiaryData, name}) => {
     }
   }, [beneficiaryData])
   console.log(cr)
-  return (
+  if(beneficiaryData!== undefined && name !== undefined){
+  return ( <div>{beneficiaryData ? (
     <Layout>
       <Helmet>
         <title>Beneficiary Page - New Hope Community Services</title>
       </Helmet>
-      <Profile name="helo" age="30" marital="Married" occupation="Teacher" />
+      <Profile name={name} age={beneficiaryData.age} marital={beneficiaryData.marital} occupation={beneficiaryData.occupation} />
 
       <HDBCard         
         header="HDB"
@@ -48,8 +49,8 @@ const BeneficiaryPage = ({beneficiaryData, name}) => {
       />
 
 
-    </Layout>
-  )
-}
+    </Layout>)
+      : <div></div>}</div> ) 
+}}
 
 export default BeneficiaryPage
