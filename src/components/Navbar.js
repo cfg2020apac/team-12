@@ -9,8 +9,8 @@ const Navbar = () => {
 
     if (url.includes("matching")) {
       setCurrentPage("matching")
-    } else if (url.includes("dashboard")) {
-      setCurrentPage("dashboard")
+    } else if (url.includes("Dashboard")) {
+      setCurrentPage("Dashboard")
     } else if (url.includes("login")) {
       setCurrentPage("login")
     } else {
