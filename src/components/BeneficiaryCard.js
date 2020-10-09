@@ -19,12 +19,11 @@ const BeneficiaryCard = ({ header, items }) => {
     console.log("here")
     var ref = firebase
       .firestore()
-      .collection("test-data")
+      .collection("beneficiary")
+      .doc("1VbbY7ZEesLwnH7OuD6Z")
       .get()
       .then(function (snapshot) {
-        snapshot.forEach(function (child) {
-          console.log(child.id)
-        })
+        console.log(snapshot.data())
       })
   }, [])
 
@@ -42,6 +41,7 @@ const BeneficiaryCard = ({ header, items }) => {
     justifyContent: "space-between",
     verticalAlign: "middle",
     alignItems: "center",
+
   }
 
   const Container = {
@@ -68,7 +68,7 @@ const BeneficiaryCard = ({ header, items }) => {
   return (
     <div style={Container}>
       <div style={Header}>
-        <div style={{ verticalAlign: "middle", display: "table-cell" }}>
+        <div style={{verticalAlign:'middle', display:'table-cell', marginLeft:'10px'}}> 
           {header}
         </div>
 
@@ -89,7 +89,6 @@ const BeneficiaryCard = ({ header, items }) => {
             <div style={GreyCards} key={index}>
               Date: {value[0]}
               <div>
-                {" "}
                 <strong>{value[1]}</strong>{" "}
               </div>
               <div> {value[2]} </div>

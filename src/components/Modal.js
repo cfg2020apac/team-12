@@ -11,6 +11,10 @@ const Modal = (props) => {
       setShowModal(false)
   }
 
+  const InputStyle = {
+    margin:'10px', display:'flex', justifyContent:"space-around", alignItems:'flex-start', width:'100%', 
+  }
+
   return (
     <div
     className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none"
@@ -34,18 +38,19 @@ const Modal = (props) => {
           </button>
         </div>
         {/*body*/}
-        <div className="relative p-6 flex flex-col" >
-                <div style={{margin:'10px'}}>
+        <div className="relative p-6 flex flex-col items-start" >
+              <div style={InputStyle}>
                     {/* Date: <DayPicker onDayClick={(day) => setNewDate({ day })} /> */}
-                Date:          <input type='text' className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-4/6 py-2 px-4 text-gray-700" placeholder="Add session date" onChange={e => setNewDate(e.target.value)}  value={newDate}  />
+                Date:          
+                <input type='text' className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-4/6 py-2 px-4 text-gray-700" placeholder="Add session date" onChange={e => setNewDate(e.target.value)}  value={newDate}  />
                 </div>
 
-                <div style={{margin:'10px'}}>
+                <div style={InputStyle}>
                 Session info: 
                 <input type='text' className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-4/6 py-2 px-4 text-gray-700" placeholder="Add title of session" onChange={e => setNewPost(e.target.value)}  value={newPost}  />
                 </div>
 
-                <div style={{margin:'10px'}}>
+                <div style={InputStyle}>
                 Session comments: 
                 <input type='text' className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-4/6 py-2 px-4 text-gray-700" placeholder="Add session comments" onChange={e => setNewComments(e.target.value)}  value={newComments}  />
                 </div>
@@ -70,7 +75,7 @@ const Modal = (props) => {
 
                 submitButton()}
           >
-            Add post
+            Save
           </button>
         </div>
       </div>
