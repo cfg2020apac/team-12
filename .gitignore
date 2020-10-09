@@ -12,3 +12,4 @@ public/
 .cache/
 .idea/
 npm-debug.log
+credentials.json
