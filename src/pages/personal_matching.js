@@ -1,8 +1,9 @@
 import React, { useState,useEffect } from 'react';
 import BeneficiaryCard from '../components/BeneficiaryCard'
 import MatchingCard from '../components/MatchingCard'
-export default function Personal(){
-  const d =[{"name":"","area":"","morning_night":"","noise_level":""},{"name":"","area":"","morning_night":"","noise_level":""},{"name":"","area":"","morning_night":"","noise_level":""},{"name":"","area":"","morning_night":"","noise_level":""}]
+
+export default function PersonalMatching(){
+  const d =[{"name":"","area":"","morning_night":"","noise_level":"","age":""},{"name":"","area":"","morning_night":"","noise_level":"","age":""},{"name":"","area":"","morning_night":"","noise_level":"","age":""},{"name":"","area":"","morning_night":"","noise_level":"","age":""}]
     
   const [matches, setMatches] = useState(JSON.stringify(d));
   
@@ -42,10 +43,10 @@ export default function Personal(){
                 ['10 Oct 2020', 'Last Session with Counsellor', 'Text box'],
                 ['8 Oct 2020', 'First Session with Counsellor', 'Text box'] ]} />
             <MatchingCard header="Matches" items={[ 
-                ["Name: "+JSON.parse(matches)[0]["name"],"Area: "+JSON.parse(matches)[0]["area"],"morning/night person: "+ JSON.parse(matches)[0]["morning_night"],"Noise level: "+ JSON.parse(matches)[0]["noise_level"]],
-                ["Name: "+JSON.parse(matches)[1]["name"],"Area: "+JSON.parse(matches)[1]["area"],"morning/night person: "+ JSON.parse(matches)[1]["morning_night"],"Noise level: "+ JSON.parse(matches)[1]["noise_level"]],
-                ["Name: "+JSON.parse(matches)[2]["name"],"Area: "+JSON.parse(matches)[2]["area"],"morning/night person: "+ JSON.parse(matches)[2]["morning_night"], "Noise level: "+ JSON.parse(matches)[0]["noise_level"]],
-                ["Name: "+JSON.parse(matches)[3]["name"],"Area: "+JSON.parse(matches)[3]["area"],"morning/night person: "+ JSON.parse(matches)[3]["morning_night"],"Noise level: "+ JSON.parse(matches)[0]["noise_level"]]
+                ["Name: "+JSON.parse(matches)[0]["name"],"Area: "+JSON.parse(matches)[0]["area"],"morning/night person: "+ JSON.parse(matches)[0]["morning_night"],"Noise level: "+ JSON.parse(matches)[0]["noise_level"],"Age Group: "+ JSON.parse(matches)[0]["age"]],
+                ["Name: "+JSON.parse(matches)[1]["name"],"Area: "+JSON.parse(matches)[1]["area"],"morning/night person: "+ JSON.parse(matches)[1]["morning_night"],"Noise level: "+ JSON.parse(matches)[1]["noise_level"],"Age Group: "+ JSON.parse(matches)[1]["age"]],
+                ["Name: "+JSON.parse(matches)[2]["name"],"Area: "+JSON.parse(matches)[2]["area"],"morning/night person: "+ JSON.parse(matches)[2]["morning_night"], "Noise level: "+ JSON.parse(matches)[0]["noise_level"],"Age Group: "+ JSON.parse(matches)[2]["age"]],
+                ["Name: "+JSON.parse(matches)[3]["name"],"Area: "+JSON.parse(matches)[3]["area"],"morning/night person: "+ JSON.parse(matches)[3]["morning_night"],"Noise level: "+ JSON.parse(matches)[0]["noise_level"],"Age Group: "+ JSON.parse(matches)[3]["age"]]
             ]} />
         </div>
         
