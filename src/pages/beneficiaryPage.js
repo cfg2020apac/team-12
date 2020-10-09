@@ -5,7 +5,25 @@ import BeneficiaryCard from "../components/BeneficiaryCard"
 import HDBCard from '../components/HDBCard'
 import { Helmet } from "react-helmet"
 
-const beneficiaryPage = () => {
+const beneficiaryPage = ({name}) => {
+  const [data, setData] = useState()
+  useEffect(() => {
+    //console.log("here")
+    var ref = firebase
+      .firestore()
+      .collection("beneficiary")
+      .get()
+      .then(function (snapshot) {
+        snapshot.forEach(function (child) {
+          if(child.data().name == name){
+            setData(child.data())
+          }
+        })
+
+        
+      })
+  }, [])
+  console.log(data)
   return (
     <Layout>
       <Helmet>
