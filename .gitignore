@@ -10,3 +10,5 @@ Team 12/
 node_modules/
 public/
 .cache/
+.idea/
+npm-debug.log
