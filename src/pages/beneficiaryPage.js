@@ -33,7 +33,7 @@ const BeneficiaryPage = ({beneficiaryData, name}) => {
 
       <HDBCard         
         header="HDB"
-        items={{1:"Completed", 2:"Completed", 3:"Completed", 4:"Not Completed", 5:"Not Completed"}} 
+        items={{"allocation":"Completed", "collection":"Completed", "doc_approval":"Completed", "eligibility":"Not Completed", "matching":"Not Completed"}} 
         clientName={"Thomas"}
         />
 

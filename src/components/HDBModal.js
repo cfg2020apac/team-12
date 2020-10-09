@@ -56,9 +56,9 @@ const HDBModal = (props) => {
                 </div>
               
               <select
-              onChange={(event) => changeSelection(1, event.target.value)}>
+              onChange={(event) => changeSelection('eligibility', event.target.value)}>
                 {dropdownOptions.map((value,index) =>{
-                  return <option value={value} selected={value == items[1]}  >{value}</option>
+                  return <option value={value} selected={value == items['eligibility']}  >{value}</option>
                 })}
               </select>
 
@@ -67,11 +67,11 @@ const HDBModal = (props) => {
               <div style={InputStyle}>
               Document Approval: 
               <select 
-                onChange={(event) => changeSelection(2, event.target.value)}
+                onChange={(event) => changeSelection('doc_approval', event.target.value)}
                 // value = {items[2]}
               >
                 {dropdownOptions.map((value,index) =>{
-                  return <option value={value} selected={value == items[2]} >{value}</option>
+                  return <option value={value} selected={value == items['doc_approval']} >{value}</option>
                 })}
               </select>
              </div>
@@ -79,11 +79,11 @@ const HDBModal = (props) => {
               <div style={InputStyle}>
               Matching with Tenant: 
               <select
-              onChange={(event) => changeSelection(3, event.target.value)}
+              onChange={(event) => changeSelection('matching', event.target.value)}
               // value = {items[3]}
               >
                 {dropdownOptions.map((value,index) =>{
-                  return <option value={value} selected={value == items[3]} >{value}</option>
+                  return <option value={value} selected={value == items['matching']} >{value}</option>
                 })}
               </select>
               </div>
@@ -91,11 +91,11 @@ const HDBModal = (props) => {
               <div style={InputStyle}>
               Alocation of HDB Unit: 
               <select
-              onChange={(event) => changeSelection(4, event.target.value)}
+              onChange={(event) => changeSelection('allocation', event.target.value)}
               // value = {items[4]}
               >
                 {dropdownOptions.map((value,index) =>{
-                  return <option value={value} selected={value == items[4]} >{value}</option>
+                  return <option value={value} selected={value == items['allocation']} >{value}</option>
                 })}
               </select>
               </div>
@@ -103,11 +103,11 @@ const HDBModal = (props) => {
               <div style={InputStyle}>
               Key Collection: 
               <select
-              onChange={(event) => changeSelection(5, event.target.value)}
+              onChange={(event) => changeSelection('collection', event.target.value)}
               // value = {items[5]}
               >
                 {dropdownOptions.map((value,index) =>{
-                  return <option value={value} selected={value == items[5]} >{value}</option>
+                  return <option value={value} selected={value == items['collection']} >{value}</option>
                 })}
               </select>
               </div>
