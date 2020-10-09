@@ -69,9 +69,9 @@ const AddBeneficiary = () => {
                 Gender
               </label>
 
-                <select name="gender" style={{backgroundColor:'transparent', marginBottom:'10px', marginLeft:'10px'}}   ref={register}>
-                <option style={{backgroundColor:'transparent', marginBottom:'10px', marginLeft:'10px'}}   value="female">Female</option>
-                <option style={{backgroundColor:'transparent', marginBottom:'10px', marginLeft:'10px'}}  value="male">Male</option>
+                <select name="gender" style={{backgroundColor:'transparent', marginBottom:'10px', marginLeft:'20px'}}   ref={register}>
+                <option style={{backgroundColor:'transparent', marginBottom:'12px', marginLeft:'10px'}}   value="female">Female</option>
+                <option style={{backgroundColor:'transparent', marginBottom:'12px', marginLeft:'10px'}}  value="male">Male</option>
                 </select>
         </div> 
         <div className="mb-6 pt-3 rounded bg-gray-200">
@@ -94,11 +94,11 @@ const AddBeneficiary = () => {
                 Marital Status
               </label>
 
-              <div className="text-align-center "  style={{marginBottom:'10px'}} >
-              <select name="marital_status" ref={register} style={{backgroundColor:'transparent', marginBottom:'12px', marginLeft:'10px'}} >
-                <option style={{backgroundColor:'transparent', marginBottom:'10px', marginLeft:'10px'}}  value="Married">Married</option>
-                <option style={{backgroundColor:'transparent', marginBottom:'10px', marginLeft:'10px'}} value="Single">Single</option>
-                <option style={{backgroundColor:'transparent', marginBottom:'10px', marginLeft:'10px'}}  value="Divorced">Divorced</option>
+              <div className="text-align-center "  style={{marginBottom:'12px'}} >
+              <select name="marital_status" ref={register} style={{backgroundColor:'transparent', marginBottom:'14px', marginLeft:'20px'}} >
+                <option style={{backgroundColor:'transparent', marginBottom:'12px', marginLeft:'10px'}}  value="Married">Married</option>
+                <option style={{backgroundColor:'transparent', marginBottom:'12px', marginLeft:'10px'}} value="Single">Single</option>
+                <option style={{backgroundColor:'transparent', marginBottom:'12px', marginLeft:'10px'}}  value="Divorced">Divorced</option>
                 </select>
               </div>
 
@@ -116,7 +116,7 @@ const AddBeneficiary = () => {
               />
         </div>
 
-        <input type="submit"  className="bg-purple-600 hover:bg-purple-700 py-2 rounded shadow-lg w-60  hover:shadow-xl transition duration-200 text-center text-white" style={{width: "100px"}} />
+        <button  className="bg-purple-600 hover:bg-purple-700 py-2 rounded shadow-lg w-60  hover:shadow-xl transition duration-200 text-center text-white" style={{width: "120px",padding: "10px"}}>Submit</button>
       </form>
       </div>
       </Layout>
