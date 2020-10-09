@@ -1,10 +1,23 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
 import { Link } from "gatsby"
 
 const Navbar = () => {
+  const [currentPage, setCurrentPage] = useState("")
+  useEffect(() => {
+    let url = window.location.pathname
+
+    if (url.includes("matching")) {
+      setCurrentPage("matching")
+    } else if (url.includes("overview")) {
+      setCurrentPage("overview")
+    } else {
+      setCurrentPage("index")
+    }
+  }, [])
+
   return (
     <nav
-      class="flex items-center justify-between flex-wrap p-6"
+      class="flex items-center justify-between flex-wrap p-6 shadow"
       // style={{ backgroundColor: "#363740" }}
     >
       <div class="flex items-center flex-shrink-0 mr-8">
@@ -30,19 +43,31 @@ const Navbar = () => {
             href="#responsive-header"
             class="block mt-4 lg:inline-block lg:mt-0 text-gray-700 hover:text-gray-600 mr-6 border-b-4 border-transparent hover:border-green-1"
           >
-            <div class="border-b-4 px-2">Overview</div>
+            {currentPage == "overview" ? (
+              <div class="border-b-4 border-green-500 px-2">Overview</div>
+            ) : (
+              <div class="border-b-4 px-2">Overview</div>
+            )}
           </a>
           <a
             href="/"
             class="block mt-4 lg:inline-block lg:mt-0 text-gray-700 hover:text-gray-600 hover:text-white mr-6"
           >
-            <div class="border-b-4 border-green-500 px-2">Beneficiaries</div>
+            {currentPage == "index" ? (
+              <div class="border-b-4 border-green-500 px-2">Beneficiaries</div>
+            ) : (
+              <div class="border-b-4 px-2">Beneficiaries</div>
+            )}
           </a>
           <a
-            href="#responsive-header"
+            href="/matching"
             class="block mt-4 lg:inline-block lg:mt-0 text-gray-700 hover:text-gray-600 hover:text-white mr-6"
           >
-            <div class="border-b-4 px-2">Matching</div>
+            {currentPage == "matching" ? (
+              <div class="border-b-4 border-green-500 px-2">Beneficiaries</div>
+            ) : (
+              <div class="border-b-4 px-2">Beneficiaries</div>
+            )}
           </a>
         </div>
         <div>
