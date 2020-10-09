@@ -89,7 +89,6 @@ const BeneficiaryCard = ({ header, items }) => {
             <div style={GreyCards} key={index}>
               Date: {value[0]}
               <div>
-                {" "}
                 <strong>{value[1]}</strong>{" "}
               </div>
               <div> {value[2]} </div>
