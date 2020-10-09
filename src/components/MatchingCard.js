@@ -68,7 +68,6 @@ export default function MatchingCard({ header, items }) {
             <div> {value[2]} </div>
             <div> {value[3]} </div>
             <div> {value[4]} </div>
-          </div>
           </td>
           </tr>
           </table>
