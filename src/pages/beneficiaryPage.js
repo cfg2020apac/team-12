@@ -3,10 +3,14 @@ import Layout from "../components/Layout"
 import Profile from "../components/Profile"
 import BeneficiaryCard from "../components/BeneficiaryCard"
 import HDBCard from '../components/HDBCard'
+import { Helmet } from "react-helmet"
 
 const beneficiaryPage = () => {
   return (
     <Layout>
+      <Helmet>
+        <title>Beneficiary Page - New Hope Community Services</title>
+      </Helmet>
       <Profile name="helo" age="30" marital="Married" occupation="Teacher" />
 
       <HDBCard         

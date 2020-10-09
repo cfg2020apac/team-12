@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react"
 import { Link } from "gatsby"
+import NewHopeLogo from "../icons/NewHopeLogo.jpg"
 
 const Navbar = () => {
   const [currentPage, setCurrentPage] = useState("")
@@ -8,8 +9,10 @@ const Navbar = () => {
 
     if (url.includes("matching")) {
       setCurrentPage("matching")
-    } else if (url.includes("overview")) {
-      setCurrentPage("overview")
+    } else if (url.includes("dashboard")) {
+      setCurrentPage("dashboard")
+    } else if (url.includes("login")) {
+      setCurrentPage("login")
     } else {
       setCurrentPage("index")
     }
@@ -17,10 +20,18 @@ const Navbar = () => {
 
   return (
     <nav
-      class="flex items-center justify-between flex-wrap p-6 shadow"
+      class="flex items-center justify-between flex-wrap p-6 shadow bg-white"
       // style={{ backgroundColor: "#363740" }}
     >
       <div class="flex items-center flex-shrink-0 mr-8">
+        <div className="relative hidden w-16 h-16 mr-1 rounded-full md:block">
+          <img
+            className="object-cover w-full h-full"
+            src={NewHopeLogo}
+            alt=""
+            loading="lazy"
+          />
+        </div>
         <span class="font-semibold text-xl tracking-tight">
           New Hope Community Services
         </span>
@@ -40,13 +51,13 @@ const Navbar = () => {
       <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
         <div class="text-m lg:flex-grow">
           <a
-            href="#responsive-header"
+            href="/dashboard"
             class="block mt-4 lg:inline-block lg:mt-0 text-gray-700 hover:text-gray-600 mr-6 border-b-4 border-transparent hover:border-green-1"
           >
-            {currentPage == "overview" ? (
-              <div class="border-b-4 border-green-500 px-2">Overview</div>
+            {currentPage == "dashboard" ? (
+              <div class="border-b-4 border-green-500 px-2">Dashboard</div>
             ) : (
-              <div class="border-b-4 px-2">Overview</div>
+              <div class="border-b-4 px-2">Dashboard</div>
             )}
           </a>
           <a
@@ -72,7 +83,7 @@ const Navbar = () => {
         </div>
         <div>
           <a
-            href="#"
+            href="/login"
             class="inline-block text-sm px-4 py-2 leading-none border rounded text-gray-700 border-black hover:text-gray-600 hover:bg-gray-200 mt-4 lg:mt-0"
           >
             Login/Logout
