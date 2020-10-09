@@ -74,7 +74,7 @@ const Login = () => {
               </a>
             </div>
             <Link
-              to="/"
+              to="/dashboard"
               class="bg-purple-600 hover:bg-purple-700 py-2 rounded shadow-lg hover:shadow-xl transition duration-200 text-center"
             >
               <button class="text-white font-bold py-2 rounded" type="submit">
