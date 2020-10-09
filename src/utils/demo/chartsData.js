@@ -42,7 +42,7 @@ export const doughnutOptions = {
 
 export const lineOptions = {
   data: {
-    labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+    labels: ['April', 'May', 'June', 'July', 'August', 'September', 'October'],
     datasets: [
       {
         label: 'In shelter',
@@ -52,7 +52,7 @@ export const lineOptions = {
          */
         backgroundColor: '#0694a2',
         borderColor: '#0694a2',
-        data: [9, 7, 8, 6, 8, 9, 11],
+        data: [7, 8, 6, 8, 9, 11],
         fill: false,
       },
       {
@@ -102,7 +102,7 @@ export const lineOptions = {
 
 export const barOptions = {
   data: {
-    labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+    labels: ['March', 'April', 'May', 'June', 'July', 'August', 'September', 'October'],
     datasets: [
       {
         label: 'Shoes',
