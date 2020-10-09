@@ -21,7 +21,8 @@
     "gatsby-plugin-postcss": "^3.0.1",
     "postcss": "^8.1.1",
     "react": "^16.12.0",
-    "react-dom": "^16.12.0"
+    "react-dom": "^16.12.0",
+    "tailwindcss": "^1.8.12"
   },
   "devDependencies": {
     "prettier": "2.1.2",
