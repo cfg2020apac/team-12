@@ -11,3 +11,4 @@ node_modules/
 public/
 .cache/
 credentials.json
+.idea/
