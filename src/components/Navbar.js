@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react"
 import { Link } from "gatsby"
+import NewHopeLogo from "../icons/NewHopeLogo.jpg"
 
 const Navbar = () => {
   const [currentPage, setCurrentPage] = useState("")
@@ -17,10 +18,18 @@ const Navbar = () => {
 
   return (
     <nav
-      class="flex items-center justify-between flex-wrap p-6 shadow"
+      class="flex items-center justify-between flex-wrap p-6 shadow bg-white"
       // style={{ backgroundColor: "#363740" }}
     >
       <div class="flex items-center flex-shrink-0 mr-8">
+        <div className="relative hidden w-16 h-16 mr-1 rounded-full md:block">
+          <img
+            className="object-cover w-full h-full"
+            src={NewHopeLogo}
+            alt=""
+            loading="lazy"
+          />
+          </div>
         <span class="font-semibold text-xl tracking-tight">
           New Hope Community Services
         </span>
