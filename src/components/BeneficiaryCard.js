@@ -3,28 +3,22 @@ import Modal from "../components/Modal"
 import firebase from "firebase"
 import "firebase/firestore"
 
-firebase.initializeApp({
-  apiKey: "AIzaSyDzrk0KMpEdFASSX3n0Z_C9X4m-tve3C1k",
-  authDomain: "jp-morgan-c945b.firebaseapp.com",
-  databaseURL: "https://jp-morgan-c945b.firebaseio.com",
-  projectId: "jp-morgan-c945b",
-  storageBucket: "jp-morgan-c945b.appspot.com",
-  messagingSenderId: "542910140897",
-  appId: "1:542910140897:web:f07a946fffffb2407ec2a0",
-  measurementId: "G-HZQ4PB8RPC",
-})
+// firebase.initializeApp({
+//   apiKey: "AIzaSyDzrk0KMpEdFASSX3n0Z_C9X4m-tve3C1k",
+//   authDomain: "jp-morgan-c945b.firebaseapp.com",
+//   databaseURL: "https://jp-morgan-c945b.firebaseio.com",
+//   projectId: "jp-morgan-c945b",
+//   storageBucket: "jp-morgan-c945b.appspot.com",
+//   messagingSenderId: "542910140897",
+//   appId: "1:542910140897:web:f07a946fffffb2407ec2a0",
+//   measurementId: "G-HZQ4PB8RPC",
+// })
 
 const BeneficiaryCard = ({ header, items }) => {
-  useEffect(() => {
-    // console.log("here")
-    // var ref = firebase
-    //   .firestore()
-    //   .collection("beneficiary")
-    //   .doc("1VbbY7ZEesLwnH7OuD6Z")
-    //   .get()
-    //   .then(function (snapshot) {
-    //   })
-  }, [])
+  function secondsToString(seconds) {
+    let a = new Date(seconds * 1000)
+    return a.toString()
+  }
 
   const [status, showModal] = useState(false)
 
@@ -84,21 +78,18 @@ const BeneficiaryCard = ({ header, items }) => {
           Add Post
         </button>
       </div>
-
-      {items
-        .slice(0)
-        .reverse()
-        .map((value, index) => {
-          return (
-            <div style={GreyCards} key={index}>
-              Date: {value[0]}
-              <div>
-                <strong>{value[1]}</strong>{" "}
-              </div>
-              <div> {value[2]} </div>
+      {items.reverse().map((value, index) => {
+        return (
+          <div style={GreyCards} key={index}>
+            Date:{" "}
+            {value.post_date ? secondsToString(value.post_date.seconds) : null}
+            <div>
+              <strong>{value.post_title}</strong>{" "}
             </div>
-          )
-        })}
+            <div> {value.post_descrip} </div>
+          </div>
+        )
+      })}
     </div>
   )
 }
