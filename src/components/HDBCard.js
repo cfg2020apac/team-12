@@ -49,11 +49,11 @@ export default function BeneficiaryCard({header , items, clientName}){
 
     const icon = (text) =>{
         if(text == "Completed"){
-            return <FontAwesomeIcon icon={faCheckCircle} style={{color:'green'}} size='2.5x' /> 
+            return <FontAwesomeIcon icon={faCheckCircle} style={{color:'#2a9d8f'}} size='2.5x' /> 
         } else if (text == "Pending"){
-            return <FontAwesomeIcon icon={faStopwatch} style={{color:'#f5c542'}} size='2.5x' /> 
+            return <FontAwesomeIcon icon={faStopwatch} style={{color:'#E9C46A'}} size='2.5x' /> 
         } else {
-            return   <FontAwesomeIcon icon={faTimesCircle} style={{color:'red'}}  size='2.5x'  /> 
+            return   <FontAwesomeIcon icon={faTimesCircle} style={{color:'#e76f51'}}  size='2.5x'  /> 
         }
     }
 
