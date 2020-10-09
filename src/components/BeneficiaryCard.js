@@ -13,6 +13,7 @@ export default function BeneficiaryCard({header , items}){
         width: '100%',
         height: '50px',
         flexStart:'start',
+
         flexDirection: "row",
         display: "flex",
         justifyContent: 'space-between',

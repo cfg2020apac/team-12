@@ -64,9 +64,9 @@ const Navbar = () => {
             class="block mt-4 lg:inline-block lg:mt-0 text-gray-700 hover:text-gray-600 hover:text-white mr-6"
           >
             {currentPage == "matching" ? (
-              <div class="border-b-4 border-green-500 px-2">Beneficiaries</div>
+              <div class="border-b-4 border-green-500 px-2">Matching</div>
             ) : (
-              <div class="border-b-4 px-2">Beneficiaries</div>
+              <div class="border-b-4 px-2">Matching</div>
             )}
           </a>
         </div>
