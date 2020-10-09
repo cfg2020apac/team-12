@@ -43,7 +43,7 @@ function Dashboard() {
         <title>Dashboard - New Hope Community Services</title>
       </Helmet>
       <Layout>
-        <div class="m-4">
+        <div className="border px-4 py-3 rounded-lg m-4">
           <PageTitle>Dashboard</PageTitle>
 
           {/* <!-- Cards --> */}
