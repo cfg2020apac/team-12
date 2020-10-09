@@ -79,7 +79,7 @@ const HomePage = () => {
                     <div>
                       <p class="font-semibold">{i.name}</p>
                       <p class="text-xs text-gray-600 dark:text-gray-400">
-                        <Link to={`../beneficiaryPage/${i.name}`}>More Details</Link>
+                        <Link to={`../BeneficiaryPage`} state={i, i.name}>More Details</Link>
                       </p>
                     </div>
                   </div>
