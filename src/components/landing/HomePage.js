@@ -108,13 +108,13 @@ const HomePage = () => {
                           title="Service Provider 1"
                         />
                         <img
-                          src="https://pickaface.net/gallery/avatar/unr_random_180410_1905_z1exb.png"
+                          src="https://pickaface.net/gallery/avatar/unr_asdfgh_201009_2337_9lv0eb.png"
                           class="inline object-cover w-8 h-8 mr-4 rounded-full"
                           alt="profile picture"
                           title="Service Provider 2"
                         />
                         <img
-                          src="https://pickaface.net/gallery/avatar/unr_random_180410_1905_z1exb.png"
+                          src="https://pickaface.net/gallery/avatar/unr_tyro_201009_2126_9lr2vu.png"
                           class="inline object-cover w-8 h-8 mr-4 rounded-full"
                           alt="profile picture"
                           title="Service Provider 3"

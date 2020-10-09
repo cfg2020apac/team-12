@@ -42,21 +42,21 @@ export const doughnutOptions = {
 
 export const lineOptions = {
   data: {
-    labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+    labels: ['April', 'May', 'June', 'July', 'August', 'September', 'October'],
     datasets: [
       {
-        label: 'Organic',
+        label: 'In shelter',
         /**
          * These colors come from Tailwind CSS palette
          * https://tailwindcss.com/docs/customizing-colors/#default-color-palette
          */
         backgroundColor: '#0694a2',
         borderColor: '#0694a2',
-        data: [9, 7, 8, 6, 8, 9, 11],
+        data: [2, 7, 8, 6, 8, 9, 11],
         fill: false,
       },
       {
-        label: 'Paid',
+        label: 'Found housing',
         fill: false,
         /**
          * These colors come from Tailwind CSS palette
@@ -102,7 +102,7 @@ export const lineOptions = {
 
 export const barOptions = {
   data: {
-    labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+    labels: ['March', 'April', 'May', 'June', 'July', 'August', 'September', 'October'],
     datasets: [
       {
         label: 'Shoes',

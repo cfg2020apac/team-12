@@ -38,6 +38,19 @@ function Dashboard() {
         })
 
         set_HDB_eligibility(arr)
+      })
+
+    var ref = firebase
+      .firestore()
+      .collection("beneficiary")
+      .get()
+      .then(function (snapshot) {
+        let arr = []
+        snapshot.forEach(function (child) {
+          arr.push(child.data())
+          // getting all the data from each child
+        })
+
         set_num_beneficiary(arr.length)
       })
   }, [])
@@ -55,6 +68,13 @@ function Dashboard() {
   var test = doughnutOptions
   test.data.datasets[0].data = stage_count;
 
+  var temp = lineOptions
+  var t = [2, 7, 8, 6, 8, 9, 11]
+  t.pop()
+  t.push(num_beneficiary)
+  temp.data.datasets[0].data = t;
+
+  var new_beneficiary = t[6] - t[5]
 
 
   return (
@@ -69,9 +89,9 @@ function Dashboard() {
           {/* <!-- Cards --> */}
           <div className="grid gap-6 mb-8 md:grid-cols-2 xl:grid-cols-4">
             <InfoCard title="Total Beneficiaries" value={num_beneficiary}>
-              <div className="relative hidden w-10 h-10 mr-6 rounded-full md:block bg-gray-400 justify-center">
+              <div className="relative hidden w-7 h-7 mr-4 rounded-full md:block justify-center">
                 <img
-                  className="object-cover w-7 h-7 rounded-full text-center"
+                  className="object-cover w-full h-full rounded-full text-center"
                   src="https://img.icons8.com/material/24/000000/home--v5.png"
                 />
               </div>
@@ -79,18 +99,18 @@ function Dashboard() {
             </InfoCard>
 
             <InfoCard title="Total Service Partners" value="40">
-              <div className="relative hidden w-10 h-10 mr-6 rounded-full md:block bg-gray-400 justify-center">
+              <div className="relative hidden w-7 h-7 mr-4 rounded-full md:block justify-center">
                 <img
-                  className="object-cover w-7 h-7 rounded-full text-center"
+                  className="object-cover w-full h-full rounded-full text-center"
                   src="https://img.icons8.com/metro/26/000000/handshake.png"
                 />
               </div>
             </InfoCard>
 
-            <InfoCard title="New Beneficiaries this month" value="23">
-              <div className="relative hidden w-10 h-10 mr-6 rounded-full md:block bg-gray-400 justify-center">
+            <InfoCard title="New Beneficiaries this month" value={new_beneficiary}>
+              <div className="relative hidden w-6 h-6 mr-4 rounded-full md:block justify-center">
                 <img
-                  className="object-cover w-6 h-6 rounded-full text-center"
+                  className="object-cover w-full h-full rounded-full text-center"
                   src="https://img.icons8.com/ios-filled/50/000000/up.png"
                 />
               </div>
@@ -98,11 +118,11 @@ function Dashboard() {
 
             <InfoCard
               title="Found housing in this month"
-              value="12"
+              value="2"
             >
-              <div className="relative hidden w-10 h-10 mr-6 rounded-full md:block bg-gray-400 justify-center">
+              <div className="relative hidden w-7 h-7 mr-4 rounded-full md:block justify-center">
                 <img
-                  className="object-cover w-7 h-7 rounded-full text-center"
+                  className="object-cover w-full h-full rounded-full text-center"
                   src="https://img.icons8.com/material/24/000000/checked-2--v1.png"
                 />
               </div>
