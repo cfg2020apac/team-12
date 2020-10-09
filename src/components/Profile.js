@@ -1,7 +1,7 @@
 import React from "react"
 import ProfilePic from "../../static/person-placeholder.png"
 
-const Profile = () => {
+const Profile = ({name, age, marital, occupation}) => {
     return (
         <div class="flex w-full border rounded-lg p-4 mb-4">
             {/* Profile */}
@@ -14,10 +14,10 @@ const Profile = () => {
                 />
               </div>
               <div class="flex flex-col">
-                <div class="flex text-center">helo</div>
-                <div>Age: 30</div>
-                <div>Marital Status: Married</div>
-                <div>Occupation: Teacher</div>
+                <div class="flex text-center">{name}</div>
+                <div>Age: {age}</div>
+                <div>Marital Status: {marital}</div>
+                <div>Occupation: {occupation}</div>
               </div>
             </div>
           </div>
