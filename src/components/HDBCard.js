@@ -45,7 +45,7 @@ export default function BeneficiaryCard({header , items, clientName}){
         console.log("HIT", status)
     }
 
-    const HDB_DICT = {1:"Eligibility", 2:"Document Approval", 3:"Matching with Tenant", 4:"Allocation of HDB Unit", 5:"Key Collection"}
+    const HDB_DICT = {"eligibility":"Eligibility", "doc_approval":"Document Approval", "matching":"Matching with Tenant", "allocation":"Allocation of HDB Unit", "collection":"Key Collection"}
 
     const icon = (text) =>{
         if(text == "Completed"){
@@ -75,12 +75,12 @@ export default function BeneficiaryCard({header , items, clientName}){
         </div>            
             {
                 Object.keys(items).map((value, index) => {
-
+                    console.log(index)
                     return <div style={GreyCards} key={index}> 
 
                     <div>
                     <label>
-                        {value + ". " }
+                        { index +1  + ". " }
                     </label>
                         {HDB_DICT[value]}  
                     </div>
