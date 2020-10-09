@@ -27,6 +27,7 @@
     "gatsby-plugin-firebase": "^0.2.0-beta.4",
     "gatsby-plugin-postcss": "^3.0.1",
     "gatsby-plugin-react-helmet": "^3.3.14",
+    "moment": "^2.29.1",
     "postcss": "^8.1.1",
     "react": "^16.12.0",
     "react-chartjs-2": "^2.10.0",
