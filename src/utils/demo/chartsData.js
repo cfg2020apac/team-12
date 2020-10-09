@@ -52,7 +52,7 @@ export const lineOptions = {
          */
         backgroundColor: '#0694a2',
         borderColor: '#0694a2',
-        data: [7, 8, 6, 8, 9, 11],
+        data: [2, 7, 8, 6, 8, 9, 11],
         fill: false,
       },
       {

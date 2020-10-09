@@ -69,8 +69,12 @@ function Dashboard() {
   test.data.datasets[0].data = stage_count;
 
   var temp = lineOptions
-  console.log('HAHAHAHAHHA', temp.data.datasets[0].data.push(num_beneficiary))
-  // temp.data.datasets[0].data[-1] = num_beneficiary;
+  var t = [2, 7, 8, 6, 8, 9, 11]
+  t.pop()
+  t.push(num_beneficiary)
+  temp.data.datasets[0].data = t;
+
+  var new_beneficiary = t[6] - t[5]
 
 
   return (
@@ -103,7 +107,7 @@ function Dashboard() {
               </div>
             </InfoCard>
 
-            <InfoCard title="New Beneficiaries this month" value="5">
+            <InfoCard title="New Beneficiaries this month" value={new_beneficiary}>
               <div className="relative hidden w-6 h-6 mr-4 rounded-full md:block justify-center">
                 <img
                   className="object-cover w-full h-full rounded-full text-center"
