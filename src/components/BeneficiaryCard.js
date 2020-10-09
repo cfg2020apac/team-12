@@ -46,14 +46,13 @@ export default function BeneficiaryCard({header , items}){
 
         <div style={Header} >
 
-            <div style={{verticalAlign:'middle', display:'table-cell'}}>
+            <div style={{verticalAlign:'middle', display:'table-cell', marginLeft:'10px'}}>
                 {header}
             </div>
             
-           
 
         {status ? <Modal setShowModal={showModal}  items={items} /> : null }
-            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded w-40 my-1 mx-1 " onClick={changeModal} >
+            <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded w-40 my-1 mx-1 " onClick={changeModal} >
                 Add Post
             </button>
         </div>
