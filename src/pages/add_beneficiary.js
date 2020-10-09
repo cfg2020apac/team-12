@@ -13,6 +13,8 @@ const AddBeneficiary = () => {
     
 
     function write(values){
+        cancelCourse()
+        alert("Form has been submitted!")
         var beneficiaryRef = firebase.firestore().collection("/beneficiary");
         beneficiaryRef.add({
             age: values["age"],
@@ -31,13 +33,19 @@ const AddBeneficiary = () => {
           });
     }
 
+    function cancelCourse(){ 
+      document.getElementById("form").reset();
+    }
+
+
+
     return (
         <Layout>
         <Helmet>
         <title>Add Beneficiary - New Hope Community Services</title>
       </Helmet>
       <div>
-      <form onSubmit={handleSubmit(onSubmit)} className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" >
+      <form onSubmit={handleSubmit(onSubmit)} id = "form" className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" >
         <div className="mb-6 pt-3 rounded bg-gray-200">
               <label
                 className="block text-gray-700 text-sm font-bold mb-2 ml-3"
