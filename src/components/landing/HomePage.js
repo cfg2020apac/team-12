@@ -41,7 +41,7 @@ const HomePage = () => {
                     <div>
                       <p class="font-semibold">Person #1</p>
                       <p class="text-xs text-gray-600 dark:text-gray-400">
-                        More Details
+                      <Link to="../beneficiaryPage">More Details</Link>
                       </p>
                     </div>
                   </div>
