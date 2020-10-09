@@ -1,10 +1,9 @@
 import React from "react"
-import ProfilePic from "../../static/person-placeholder.png"
 import Layout from "../components/Layout"
 import Profile from "../components/Profile"
 import BeneficiaryCard from '../components/BeneficiaryCard'
 
-const personal = () => {
+const beneficiaryPage = () => {
   return (
           <Layout>
            <Profile name="helo" age="30" marital="Married" occupation="Teacher"/>
@@ -13,4 +12,4 @@ const personal = () => {
   )
 }
 
-export default personal
+export default beneficiaryPage
