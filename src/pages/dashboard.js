@@ -109,7 +109,7 @@ function Dashboard() {
             </InfoCard>
           </div>
 
-          <h1 className="text-2xl font-semibold text-gray-700">Today's Summary</h1>
+          <h1 className="text-2xl font-semibold text-gray-700">Month's Summary</h1>
           <p classname="text-gray-700 text-xs">  as of: {moment().format("DD/MM/YYYY")}</p> <br/>
 
 
