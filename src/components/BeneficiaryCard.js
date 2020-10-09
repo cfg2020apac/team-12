@@ -15,16 +15,10 @@ firebase.initializeApp({
 })
 
 const BeneficiaryCard = ({ header, items }) => {
-  useEffect(() => {
-    // console.log("here")
-    // var ref = firebase
-    //   .firestore()
-    //   .collection("beneficiary")
-    //   .doc("1VbbY7ZEesLwnH7OuD6Z")
-    //   .get()
-    //   .then(function (snapshot) {
-    //   })
-  }, [])
+  function secondsToString(seconds) {
+    let a = new Date(seconds * 1000)
+    return a.toString()
+  }
 
   const [status, showModal] = useState(false)
 
@@ -84,21 +78,17 @@ const BeneficiaryCard = ({ header, items }) => {
           Add Post
         </button>
       </div>
-
-      {items
-        .slice(0)
-        .reverse()
-        .map((value, index) => {
-          return (
-            <div style={GreyCards} key={index}>
-              Date: {value[0]}
-              <div>
-                <strong>{value[1]}</strong>{" "}
-              </div>
-              <div> {value[2]} </div>
+      {items.reverse().map((value, index) => {
+        return (
+          <div style={GreyCards} key={index}>
+            Date: {secondsToString(value.post_date.seconds)}
+            <div>
+              <strong>{value.post_title}</strong>{" "}
             </div>
-          )
-        })}
+            <div> {value.post_descrip} </div>
+          </div>
+        )
+      })}
     </div>
   )
 }

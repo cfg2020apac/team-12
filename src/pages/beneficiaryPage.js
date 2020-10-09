@@ -27,7 +27,6 @@ const BeneficiaryPage = ({ location }) => {
       .get()
       .then(function (snapshot) {
         setCr(snapshot.data())
-        console.log(snapshot.data().posts)
       })
 
     firebase
